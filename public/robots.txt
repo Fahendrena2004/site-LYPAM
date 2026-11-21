@@ -1,0 +1,6 @@
+# Robots.txt for Lycée Privé Adventiste Morondava (LYPAM)
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://lypam-morondava.mg/sitemap.xml
