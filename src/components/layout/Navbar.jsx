@@ -16,7 +16,6 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons"
 import { faFacebook, faWhatsapp } from "@fortawesome/free-brands-svg-icons"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { NAV_LINKS, SCHOOL_INFO } from "@/data/schoolData"
 import logoImg from "@/assets/logo.jpg"
@@ -142,38 +141,16 @@ export default function Navbar() {
                 })}
               </div>
 
-              {/* Desktop CTA & Mobile Quick Actions */}
-              <div className="flex items-center gap-2 sm:gap-3">
-                {/* Desktop Pre-inscription Button */}
-                <Button
-                  asChild
-                  className="hidden sm:inline-flex bg-[#F4B41A] hover:bg-[#EAA406] text-[#5A1218] font-bold shadow-md hover:shadow-lg transition-all"
-                >
-                  <Link to="/admissions" className="flex items-center gap-2">
-                    <FontAwesomeIcon icon={faGraduationCap} />
-                    <span>Pré-inscription</span>
-                  </Link>
-                </Button>
-
-                {/* Mobile direct call button */}
+              {/* Mobile Quick Action (Direct Call to school) */}
+              <div className="flex items-center lg:hidden">
                 <a
                   href={`tel:${SCHOOL_INFO.phone}`}
-                  className="lg:hidden w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center text-[#F4B41A] transition-all"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center text-[#F4B41A] transition-all"
                   aria-label="Appeler l'école"
+                  title="Appeler l'école"
                 >
                   <FontAwesomeIcon icon={faPhone} className="text-sm" />
                 </a>
-
-                {/* Mobile Hamburger Trigger (Ergonomic 44px min target) */}
-                <button
-                  type="button"
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="lg:hidden w-11 h-11 rounded-xl bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#F4B41A]"
-                  aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
-                  aria-expanded={isOpen}
-                >
-                  <FontAwesomeIcon icon={isOpen ? faXmark : faBars} className="text-xl" />
-                </button>
               </div>
             </div>
           </div>
