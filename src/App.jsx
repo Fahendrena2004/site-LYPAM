@@ -27,7 +27,7 @@ export default function App() {
       <SEO />
       <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-slate-900 selection:bg-[#7A1C24] selection:text-white">
         <Navbar />
-        <main className="flex-1">
+        <main className="flex-1 pb-16 lg:pb-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/a-propos" element={<About />} />
